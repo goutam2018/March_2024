@@ -1,0 +1,12 @@
+---
+- name: To Run Script
+  hosts: all
+  tasks: 
+  - name: run script
+    file:
+      path: /tmp/file.sh
+      state: absent
+      owner: root
+      group: root
+      mode: ugo=wrx
+

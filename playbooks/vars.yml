@@ -1,0 +1,19 @@
+---
+- name: to install nginx
+  hosts: all
+  become: true
+  vars: 
+   - app: nginx
+
+  tasks:
+    - name: install nginx
+      yum:
+        name: "{{ app }}"
+        state: installed
+      notify: start nginx
+
+  handlers:
+    - name: "{{ app }}"
+      service:
+        name: nginx
+        state: started

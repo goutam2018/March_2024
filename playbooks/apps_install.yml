@@ -1,0 +1,11 @@
+---
+- name: TO Install Packages
+  hosts: all
+  vars:
+    - apps: [ sysstat ]
+  tasks:
+  - name: to install packages
+    yum:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ apps }}"

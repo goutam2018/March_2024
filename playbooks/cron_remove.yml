@@ -1,0 +1,9 @@
+---
+- name: To Remove Cron Job
+  hosts: all
+  tasks: 
+  - name: to remove cron job
+    cron:
+      name: to run script
+      user: root
+      state: absent

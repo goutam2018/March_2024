@@ -1,0 +1,7 @@
+---
+- name: To install httpd and firewalld 
+  hosts: CentOS-node-1
+  roles:
+    - httpd_setup
+    - fwd_service
+

@@ -1,0 +1,13 @@
+---
+- name: to copy file from one server to another server
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+  - name: copy files
+    copy:
+      src: /root/playbooks
+      dest: /tmp/
+      owner: goutam
+      group: goutam
+      mode: ugo=rw

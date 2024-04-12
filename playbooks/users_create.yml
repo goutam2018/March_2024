@@ -1,0 +1,14 @@
+---
+- name: To Create Users 
+  hosts: all
+  tasks:
+  - name: to create users
+    user:
+      name: "{{ item }}"
+      shell: /bin/bash
+      comment: New Joinee for Linux Team
+      group: devops
+    loop: 
+    - raju
+    - sham
+    - baburao

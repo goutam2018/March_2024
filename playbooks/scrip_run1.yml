@@ -1,0 +1,17 @@
+---
+
+- name: to copy script and run 
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name:
+    copy: 
+      src: /root/playbooks/script/script.sh
+      dest: /root/opt/script/
+
+  - name: run a script
+    shell: ./script.sh
+    args: 
+      chdir: /root/opt/script/
+      
+      

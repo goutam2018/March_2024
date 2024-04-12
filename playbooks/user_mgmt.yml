@@ -1,0 +1,12 @@
+---
+- name: User Mgmt
+  hosts: all
+  
+  tasks:
+  - name: to create user
+    user:
+      name: mithu
+      comment: New User
+      shell: /bin/bash
+
+

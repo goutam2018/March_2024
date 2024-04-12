@@ -1,0 +1,8 @@
+---
+- name: To shutdown the servers
+  hosts: all
+  become: true
+  tasks:
+    - name: to poweroff the server
+      command: /sbin/shutdown -h now
+      

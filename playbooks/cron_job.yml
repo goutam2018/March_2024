@@ -1,0 +1,14 @@
+---
+- name: Run Cron Job
+  hosts: all
+  tasks: 
+  - name: To run cron job
+    cron:
+      name: to run script
+      minute: 34
+      hour: 11
+      day: 11
+      month: "*"
+      user: root
+      job: /root/opt/script/script.sh 
+      disabled: yes

@@ -1,0 +1,29 @@
+---
+- name: to stop service and kill the service
+  hosts: all
+  
+  tasks: 
+  - name: kill service
+    ignore_errors: yes
+    shell: "pgrep httpd | xargs kill"
+   
+  
+
+  - name: kill service
+    ignore_errors: yes
+    shell: "pgrep apache2 | xargs kill"
+
+
+
+
+  - name: start httpd service
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family == "RedHat"
+
+  - name: start apache2 service
+    service:
+      name: apache2
+      state: started
+    when: ansible_os_family == "Debian"
