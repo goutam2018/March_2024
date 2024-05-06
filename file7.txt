@@ -1,1 +1,2 @@
 To check the rever option on git --1
+revert commit 1
